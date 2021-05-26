@@ -1,5 +1,5 @@
 ﻿
-namespace WinFormsApp1
+namespace WinFormsDeadLock
 {
     partial class Form1
     {
