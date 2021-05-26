@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheSimplestAsync", "TheSimp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncVoid", "AsyncVoid\AsyncVoid.csproj", "{F7A80ACE-39B6-4311-AF53-DA6CC5654C92}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskRun", "TaskRun\TaskRun.csproj", "{4DA53299-9121-4A56-B9CE-1A71679BD17A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{F7A80ACE-39B6-4311-AF53-DA6CC5654C92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7A80ACE-39B6-4311-AF53-DA6CC5654C92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7A80ACE-39B6-4311-AF53-DA6CC5654C92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DA53299-9121-4A56-B9CE-1A71679BD17A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DA53299-9121-4A56-B9CE-1A71679BD17A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DA53299-9121-4A56-B9CE-1A71679BD17A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DA53299-9121-4A56-B9CE-1A71679BD17A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
