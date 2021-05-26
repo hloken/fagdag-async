@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Reflection;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+// ReSharper disable PossibleNullReferenceException
 
 namespace TaskRun
 {
@@ -11,24 +14,88 @@ namespace TaskRun
             InitializeComponent();
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            await Task.Run(() => Task.Delay(10000));
+            OutputStartMessage(MethodBase.GetCurrentMethod().Name);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonBlocking_Click(object sender, EventArgs e)
         {
-            Task.Run(async () => await Task.Delay(10000));
-        }
+            var methodName = MethodBase.GetCurrentMethod().Name;
+            OutputStartMessage(methodName);
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Task.Run(() => Task.Delay(10000));
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
             Task.Delay(10000).Wait();
+
+            OutputEndMessage(methodName);
+        }
+
+        private void buttonTaskRun_Click(object sender, EventArgs e)
+        {
+            var methodName = MethodBase.GetCurrentMethod().Name;
+            OutputStartMessage(methodName);
+
+            Task.Run(() =>
+            {
+                OutputStartMessage(methodName + "Lambda");
+                return Task.Delay(10000);
+            }).Wait();
+
+            OutputEndMessage(methodName);
+        }
+
+        private async void buttonAwaitableTaskRun_Click(object sender, EventArgs e)
+        {
+            var methodName = "buttonAwaitableTaskRun_Click";
+            OutputStartMessage(methodName);
+
+            await Task.Run(() =>
+            {
+                OutputStartMessage(methodName + "Lambda");
+                return Task.Delay(10000);
+            });
+
+            OutputEndMessage(methodName);
+        }
+
+        private void buttonTaskRunOnAwaitable_Click(object sender, EventArgs e)
+        {
+            var methodName = MethodBase.GetCurrentMethod().Name;
+            OutputStartMessage(methodName);
+
+            Task.Run(async () =>
+            {
+                OutputStartMessage(methodName + "Lambda");
+                await Task.Delay(10000);
+                OutputEndMessage(methodName + "Lambda");
+            }).Wait();
+
+            OutputEndMessage(methodName);
+        }
+        
+        private void OutputStartMessage(string methodName, int? threadId = null)
+        {
+            var threadIdToUse = threadId ?? Thread.CurrentThread.ManagedThreadId;
+
+            if (InvokeRequired)
+            {
+                Invoke(new Action<string, int?>(OutputStartMessage), new object[] { methodName, threadIdToUse });
+                return;
+            }
+
+            textBox1.Text += $"Method: {methodName} is starting in thread: {threadIdToUse} \r\n";
+        }
+
+        private void OutputEndMessage(string methodName, int? threadId = null)
+        {
+            var threadIdToUse = threadId ?? Thread.CurrentThread.ManagedThreadId;
+
+            if (InvokeRequired)
+            {
+                Invoke(new Action<string, int?>(OutputStartMessage), new object[] { methodName, threadIdToUse });
+                return;
+            }
+
+            textBox1.Text += $"Method: {methodName} is ending in thread: {threadIdToUse} \r\n";
         }
     }
 }
