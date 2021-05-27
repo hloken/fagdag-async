@@ -10,6 +10,8 @@ namespace AsyncVoid
             Console.WriteLine("Hello World!");
 
             ResolveIssue(); // Cannot await a method that is async void so this is fire-and-forget
+
+            Console.WriteLine("I am quitting now");
         }
 
         public static async void ResolveIssue()
