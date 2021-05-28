@@ -28,8 +28,8 @@ namespace WinFormsDeadLock
         }
 
         //
-        // Deadlock Fix #1
-        //
+        // Deadlock Fix #1, best solution, makes everything from event-handler and down async
+        // * everything runs in UI-thread
         private async void button2_Click(object sender, EventArgs e)
         {
             var asyncResolvedIssue = ResolveIssue2();
@@ -44,7 +44,9 @@ namespace WinFormsDeadLock
         }
 
         //
-        // Deadlock Fix #2
+        // Deadlock Fix #2, okay solution but await returns in thread-pool thread
+        // * this may not work if there are no free threads in thread-pool (thread starvation)
+        // * this may not work if you want to perform UI-related stuff after await is finished
         //
         private void button3_Click(object sender, EventArgs e)
         {
