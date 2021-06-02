@@ -5,13 +5,17 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsDeadLock", "WinFormsDeadLock\WinFormsDeadLock.csproj", "{C76747C9-3E49-4849-BB85-00B4633BBB1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheSimplestAsync", "TheSimplestAsync\TheSimplestAsync.csproj", "{CB89AE0B-7DC1-452B-B88F-DF22406845DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheSimplestAsync", "TheSimplestAsync\TheSimplestAsync.csproj", "{CB89AE0B-7DC1-452B-B88F-DF22406845DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncVoid", "AsyncVoid\AsyncVoid.csproj", "{F7A80ACE-39B6-4311-AF53-DA6CC5654C92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncVoid", "AsyncVoid\AsyncVoid.csproj", "{F7A80ACE-39B6-4311-AF53-DA6CC5654C92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskRun", "TaskRun\TaskRun.csproj", "{4DA53299-9121-4A56-B9CE-1A71679BD17A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskRun", "TaskRun\TaskRun.csproj", "{4DA53299-9121-4A56-B9CE-1A71679BD17A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncExceptions", "AsyncExceptions\AsyncExceptions.csproj", "{87E62C3A-0F7F-4C13-B91E-5A52FF539182}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncExceptions", "AsyncExceptions\AsyncExceptions.csproj", "{87E62C3A-0F7F-4C13-B91E-5A52FF539182}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhichThreadWinForms", "WhichThreadWinForms\WhichThreadWinForms.csproj", "{CCE54277-6463-42DB-8BF7-851750F0DBB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhichThreadConsoleApp", "WhichThreadConsoleApp\WhichThreadConsoleApp.csproj", "{8E6D6617-BF45-419C-8996-29DA1C20DC38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{87E62C3A-0F7F-4C13-B91E-5A52FF539182}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87E62C3A-0F7F-4C13-B91E-5A52FF539182}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87E62C3A-0F7F-4C13-B91E-5A52FF539182}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCE54277-6463-42DB-8BF7-851750F0DBB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCE54277-6463-42DB-8BF7-851750F0DBB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCE54277-6463-42DB-8BF7-851750F0DBB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCE54277-6463-42DB-8BF7-851750F0DBB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E6D6617-BF45-419C-8996-29DA1C20DC38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E6D6617-BF45-419C-8996-29DA1C20DC38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E6D6617-BF45-419C-8996-29DA1C20DC38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E6D6617-BF45-419C-8996-29DA1C20DC38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
